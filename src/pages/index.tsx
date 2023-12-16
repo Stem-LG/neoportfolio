@@ -27,13 +27,7 @@ export default function Home() {
                         loop
                         delaySpeed={3000}
                         cursorStyle={"!"}
-                        words={[
-                            "Web Developer",
-                            "Freelancer",
-                            "Tech Enthusiast",
-                            "Junior Instructor",
-                            "Always Learning",
-                        ]
+                        words={["Web Developer", "Freelancer", "Tech Enthusiast", "Junior Instructor", "Quick Learner"]
                             .map((value) => ({ value, sort: Math.random() }))
                             .sort((a, b) => a.sort - b.sort)
                             .map(({ value }) => value)}
