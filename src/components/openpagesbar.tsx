@@ -4,7 +4,7 @@ import { closePage, navigate } from "@/lib/nav_control";
 
 export default function OpenPagesBar() {
     return (
-        <div className="hidden sm:flex items-center px-4 gap-3 border-l overflow-x-scroll no-scrollbar border-primary">
+        <div className="hidden sm:flex items-center px-4 gap-3 border-l overflow-x-scroll no-scrollbar border-primary z-50">
             {pageHistory.value.map((page, idx) => {
                 return (
                     <div key={idx} className={`btn btn-sm ${currentPage.value == page && "btn-primary"} py-0 flex outline outline-1 outline-primary pr-[0.2rem]`}>
