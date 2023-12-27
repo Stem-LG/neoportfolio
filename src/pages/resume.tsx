@@ -1,3 +1,4 @@
+import { education, experience } from "@/content";
 import Link from "next/link";
 
 export default function Resume() {
@@ -5,54 +6,21 @@ export default function Resume() {
         <div className="w-full p-5">
             <h1 className="w-fit mx-auto text-4xl relative -z-10">
                 My Resume
-                <Link href="https://www.louay.tn/resume.pdf" className="absolute -right-8 -top-2"><PDFIcon/></Link>
+                <Link href="/resume.pdf" className="absolute -right-8 -top-2">
+                    <PDFIcon />
+                </Link>
             </h1>
             <div className="flex flex-wrap gap-5 mt-5">
                 {[
                     {
                         title: "Education",
                         icon: <GradCapIcon />,
-                        content: [
-                            {
-                                title: "Bachelor of Information Technology",
-                                // subtitle: "Information Systems Development Specialty",
-                                date: "2022 - 2025",
-                                place: "Higher Institute of Technological Studies of Nabeul",
-                                location: "Nabeul, Tunisia",
-                            },
-                            {
-                                title: "Other Certificates",
-                                link: "/certificates",
-                            },
-                        ],
+                        content: education,
                     },
                     {
                         title: "Experience",
                         icon: <ExperienceIcon />,
-                        content: [
-                            {
-                                title: "FreeLance Web Developer",
-                                date: "02/2023 - Present",
-                                description:
-                                    "I am a Freelance Web Developer, I work on several projects, with main focus on the Front End side, using React.JS and Next.JS.\n*Open for proposals*",
-                            },
-                            {
-                                title: "Python Instructo",
-                                date: "07/2023",
-                                place: "SmartFuture",
-                                location: "Tunis, Tunisia",
-                                description:
-                                    'I served as a Python instructor for a 2-week intensive course, preparing 20 students to earn their "IT Specialist - Python" Certification.',
-                            },
-                            {
-                                title: "Front End Developer",
-                                date: "01/2023 - 02/2023",
-                                place: "AfterCode",
-                                location: "Nabeul, Tunisia",
-                                description:
-                                    "I contributed to the development of a PWA part of a Property Management System. Then I contributed to the improvement of the UI and development of missing components in an admin control panel, part of the same PMS.",
-                            },
-                        ],
+                        content: experience,
                     },
                 ].map(({ title, icon, content }, idx) => (
                     <div
@@ -64,9 +32,9 @@ export default function Resume() {
                             <h2 className="text-secondary-content font-medium text-xl">{title}</h2>
                         </div>
                         {content.map(({ title, subtitle, date, place, location, description, link }: any, idx) => (
-                            <>
+                            <div key={idx}>
                                 {idx != 0 && <hr className="border-primary my-3" />}
-                                <div key={idx}>
+                                <div>
                                     {link ? (
                                         <Link href={link} className="text-xl font-medium underline underline-offset-4">
                                             {title}
@@ -83,7 +51,7 @@ export default function Resume() {
                                         <p className="text-md font-light mt-1 whitespace-pre-wrap">{description}</p>
                                     </div>
                                 </div>
-                            </>
+                            </div>
                         ))}
                     </div>
                 ))}
@@ -97,18 +65,18 @@ function GradCapIcon() {
         <svg width="32px" height="32px" viewBox="0,0,256,256">
             <g
                 fill="currentColor"
-                fill-rule="nonzero"
+                fillRule="nonzero"
                 stroke="none"
-                stroke-width="1"
-                stroke-linecap="butt"
-                stroke-linejoin="miter"
-                stroke-miterlimit="10"
-                stroke-dasharray=""
-                stroke-dashoffset="0"
-                font-family="none"
-                font-weight="none"
-                font-size="none"
-                text-anchor="none"
+                strokeWidth="1"
+                strokeLinecap="butt"
+                strokeLinejoin="miter"
+                strokeMiterlimit="10"
+                strokeDasharray=""
+                strokeDashoffset="0"
+                fontFamily="none"
+                fontWeight="none"
+                fontSize="none"
+                textAnchor="none"
                 style={{ mixBlendMode: "normal" }}
             >
                 <g transform="scale(4,4)">
@@ -122,37 +90,32 @@ function GradCapIcon() {
 function ExperienceIcon() {
     return (
         <svg width="32px" height="32px" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+            <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
             <g id="SVGRepo_iconCarrier">
                 <path
                     d="M12 14V12M12 14V16M12 14H18C19.1046 14 20 13.1046 20 12M12 14H6C4.89543 14 4 13.1046 4 12V8C4 6.89543 4.89543 6 6 6H18C19.1046 6 20 6.89543 20 8M20 12V18C20 19.1046 19.1046 20 18 20H6C4.89543 20 4 19.1046 4 18V17M20 12V11M15 6V5C15 3.89543 14.1046 3 13 3H11C9.89543 3 9 3.89543 9 5V6"
                     stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                 ></path>
             </g>
         </svg>
     );
 }
 
-
-function PDFIcon(){
+function PDFIcon() {
     return (
-        <svg fill="currentColor" width="28px" height="28px" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
-            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-            <g id="SVGRepo_iconCarrier">
-                {" "}
+        <svg fill="currentColor" width="28px" height="28px" viewBox="0 0 52 52">
+            <g>
                 <g>
-                    {" "}
-                    <path d="m28.6 11.4h5.1a1.11 1.11 0 0 0 1.1-1.1 1.32 1.32 0 0 0 -.3-.8l-7.2-7.1a.89.89 0 0 0 -.7-.3 1.11 1.11 0 0 0 -1.1 1.1v5.1a3.12 3.12 0 0 0 3.1 3.1z"></path>{" "}
-                    <path d="m49.83 32.45a1.43 1.43 0 0 0 -1.39-1.45h-12a1.43 1.43 0 0 0 -1.44 1.44v1.44a1.43 1.43 0 0 0 1.4 1.44h6.14l-11 11a1.42 1.42 0 0 0 0 2l1 1a1.54 1.54 0 0 0 1.09.45 1.32 1.32 0 0 0 .94-.38l11-11v6a1.43 1.43 0 0 0 1.43 1.44h1.53a1.43 1.43 0 0 0 1.47-1.4z"></path>{" "}
-                    <path d="m18.35 20.68h-1.46v4.93h1.46a1.56 1.56 0 0 0 1.56-1.1 3.93 3.93 0 0 0 .24-1.44 3.61 3.61 0 0 0 -.36-1.77 1.53 1.53 0 0 0 -1.44-.62z"></path>{" "}
-                    <path d="m11.29 20.93a1.27 1.27 0 0 0 -.84-.25h-1.45v2.23h1.46a1.18 1.18 0 0 0 .84-.28 1.09 1.09 0 0 0 .3-.86 1 1 0 0 0 -.33-.84z"></path>{" "}
-                    <path d="m33.24 16h-7.84a4.67 4.67 0 0 1 -4.7-4.6v-7.8a1.42 1.42 0 0 0 -1.34-1.5h-12.56a4.67 4.67 0 0 0 -4.7 4.6v29.4a4.6 4.6 0 0 0 4.62 4.6h17.88v-.1a15.92 15.92 0 0 1 10.2-14.9v-8.1a1.58 1.58 0 0 0 -1.56-1.6zm-20.75 7.65a2.93 2.93 0 0 1 -1.89.56h-1.6v2.71h-1.51v-7.55h3.24a2.64 2.64 0 0 1 1.76.63 2.3 2.3 0 0 1 .66 1.8 2.35 2.35 0 0 1 -.66 1.85zm8.66 1.9a2.73 2.73 0 0 1 -2.53 1.45h-3.26v-7.63h3.26a3.85 3.85 0 0 1 1.17.17 2.49 2.49 0 0 1 1.28.95 3.43 3.43 0 0 1 .54 1.22 5.6 5.6 0 0 1 .14 1.29 5 5 0 0 1 -.6 2.55zm7.92-4.84h-3.81v1.74h3.34v1.31h-3.34v3.16h-1.57v-7.54h5.38z"></path>{" "}
-                </g>{" "}
+                    <path d="m28.6 11.4h5.1a1.11 1.11 0 0 0 1.1-1.1 1.32 1.32 0 0 0 -.3-.8l-7.2-7.1a.89.89 0 0 0 -.7-.3 1.11 1.11 0 0 0 -1.1 1.1v5.1a3.12 3.12 0 0 0 3.1 3.1z"></path>
+                    <path d="m49.83 32.45a1.43 1.43 0 0 0 -1.39-1.45h-12a1.43 1.43 0 0 0 -1.44 1.44v1.44a1.43 1.43 0 0 0 1.4 1.44h6.14l-11 11a1.42 1.42 0 0 0 0 2l1 1a1.54 1.54 0 0 0 1.09.45 1.32 1.32 0 0 0 .94-.38l11-11v6a1.43 1.43 0 0 0 1.43 1.44h1.53a1.43 1.43 0 0 0 1.47-1.4z"></path>
+                    <path d="m18.35 20.68h-1.46v4.93h1.46a1.56 1.56 0 0 0 1.56-1.1 3.93 3.93 0 0 0 .24-1.44 3.61 3.61 0 0 0 -.36-1.77 1.53 1.53 0 0 0 -1.44-.62z"></path>
+                    <path d="m11.29 20.93a1.27 1.27 0 0 0 -.84-.25h-1.45v2.23h1.46a1.18 1.18 0 0 0 .84-.28 1.09 1.09 0 0 0 .3-.86 1 1 0 0 0 -.33-.84z"></path>
+                    <path d="m33.24 16h-7.84a4.67 4.67 0 0 1 -4.7-4.6v-7.8a1.42 1.42 0 0 0 -1.34-1.5h-12.56a4.67 4.67 0 0 0 -4.7 4.6v29.4a4.6 4.6 0 0 0 4.62 4.6h17.88v-.1a15.92 15.92 0 0 1 10.2-14.9v-8.1a1.58 1.58 0 0 0 -1.56-1.6zm-20.75 7.65a2.93 2.93 0 0 1 -1.89.56h-1.6v2.71h-1.51v-7.55h3.24a2.64 2.64 0 0 1 1.76.63 2.3 2.3 0 0 1 .66 1.8 2.35 2.35 0 0 1 -.66 1.85zm8.66 1.9a2.73 2.73 0 0 1 -2.53 1.45h-3.26v-7.63h3.26a3.85 3.85 0 0 1 1.17.17 2.49 2.49 0 0 1 1.28.95 3.43 3.43 0 0 1 .54 1.22 5.6 5.6 0 0 1 .14 1.29 5 5 0 0 1 -.6 2.55zm7.92-4.84h-3.81v1.74h3.34v1.31h-3.34v3.16h-1.57v-7.54h5.38z"></path>
+                </g>
             </g>
         </svg>
     );

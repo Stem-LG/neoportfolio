@@ -1,5 +1,5 @@
-import { signal } from '@preact/signals-react';
+import { effect, signal } from '@preact/signals-react';
 
 
-export const pageHistory = signal([0]);
+export const pageHistory = signal([{ idx: 0, path: "/" }]);
 export const currentPage = signal(0);

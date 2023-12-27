@@ -5,22 +5,29 @@ import { closePage, navigate } from "@/lib/nav_control";
 export default function OpenPagesBar() {
     return (
         <div className="hidden sm:flex items-center px-4 gap-3 border-l overflow-x-scroll no-scrollbar border-primary z-50">
-            {pageHistory.value.map((page, idx) => {
+            {pageHistory.value.map(({ idx, path }, key) => {
                 return (
-                    <div key={idx} className={`btn btn-sm ${currentPage.value == page && "btn-primary"} py-0 flex outline outline-1 outline-primary pr-[0.2rem]`}>
+                    <div
+                        key={key}
+                        className={`btn btn-sm ${
+                            currentPage.value == idx && "btn-primary"
+                        } py-0 flex outline outline-1 outline-primary pr-[0.2rem]`}
+                    >
                         <button
                             onClick={() => {
-                                navigate(page);
+                                navigate(path);
                             }}
                             key={idx}
                             className="h-full"
                         >
-                            {pages[page].title}
+                            {pages[idx].title}
                         </button>
                         <button
-                            className={`btn btn-xs btn-square hover:btn-primary ${currentPage.value == page && "text-primary-content hover:bg-primary"}`}
+                            className={`btn btn-xs btn-square hover:btn-primary ${
+                                currentPage.value == idx && "text-primary-content hover:bg-primary"
+                            }`}
                             onClick={() => {
-                                closePage(page);
+                                closePage(idx);
                             }}
                         >
                             <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24">

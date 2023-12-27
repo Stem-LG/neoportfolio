@@ -1,42 +1,12 @@
+import { certificates } from "@/content";
 import Link from "next/link";
 
-export default function Certificats() {
-    const certs = [
-        {
-            title: "IT Specialist in Python",
-            issuer: "Certiport",
-            link: "https://www.credly.com/badges/9d5fc864-bcfa-4831-a3dd-6d4060754bc7",
-            online: false,
-            date: "06/2023",
-        },
-        {
-            title: "Machine Learning Specialization",
-            issuer: "DeepLearning.ai",
-            link: "https://www.coursera.org/account/accomplishments/specialization/certificate/N5RFXEPYE4GX",
-            online: true,
-            date: "05/2023",
-        },
-        {
-            title: "Google IT Support Specialization",
-            issuer: "Google",
-            link: "https://www.coursera.org/account/accomplishments/specialization/certificate/NR94EGMGGGSL",
-            online: true,
-            date: "01/2023",
-        },
-        {
-            title: "Google IT Automation with Python",
-            issuer: "Google",
-            link: "https://www.coursera.org/account/accomplishments/specialization/certificate/TCZET7PLYLFL",
-            online: true,
-            date: "02/2023",
-        },
-    ];
-
+export default function Certificates() {
     return (
-        <div className="pt-5 -z-10">
+        <div className="pt-5 w-full">
             <h1 className="w-fit mx-auto text-2xl sm:text-4xl">My Certifications</h1>
             <div className="max-w-[1600px] w-full mx-auto px-5 flex flex-wrap justify-center h-fit py-5 gap-5">
-                {certs.map(({ title, issuer, online, date, link }, idx) => (
+                {certificates.map(({ title, issuer, online, date, link }, idx) => (
                     <div
                         key={idx}
                         className="max-w-[380px] w-full rounded-[5px] border border-solid border-current p-4 pb-12 relative"
@@ -46,7 +16,6 @@ export default function Certificats() {
                             {link && (
                                 <Link className="p-[5px] duration-200" href={link} target="_blank">
                                     <svg
-                                        xmlns="http://www.w3.org/2000/svg"
                                         width="32"
                                         height="32"
                                         viewBox="0 -960 960 960"

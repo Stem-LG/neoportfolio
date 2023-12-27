@@ -10,7 +10,7 @@ export default function SideBar() {
                         key={idx}
                         className="btn btn-sm flex items-center justify-start mb-3 w-full"
                         onClick={() => {
-                            navigate(idx);
+                            navigate(page.pathname);
                         }}
                     >
                         <page.icon variant="small" />
