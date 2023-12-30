@@ -37,7 +37,7 @@ export default function Resume() {
                                     "I am a Freelance Web Developer, I work on several projects, with main focus on the Front End side, using React.JS and Next.JS.\n*Open for proposals*",
                             },
                             {
-                                title: "Python Instructo",
+                                title: "Python Instructor",
                                 date: "07/2023",
                                 place: "SmartFuture",
                                 location: "Tunis, Tunisia",
