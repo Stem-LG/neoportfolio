@@ -25,14 +25,14 @@ export default function App({ Component, pageProps }: AppProps) {
                 <link rel="icon" href="/favicon.svg" />
             </Head>
             <div className={mono.className + " bg-background  text-primary pb-[60px] md:pb-0"}>
-                <header className="flex border-b sticky top-0 bg-base-100 border-primary h-[60px]">
+                <header className="flex border-b sticky top-0 bg-base-100 border-primary h-[60px] z-50">
                     <Titlebar />
                     <OpenPagesBar />
                 </header>
                 <div className="flex flex-col md:flex-row min-h-[calc(100svh-120px)]">
                     <SideBar />
                     <Component {...pageProps} />
-                    <footer className="h-[60px] w-full bg-background fixed bottom-0 border-t border-primary md:hidden">
+                    <footer className="h-[60px] w-full bg-background fixed bottom-0 border-t border-primary md:hidden z-50">
                         <BottomNavBar />
                     </footer>
                 </div>

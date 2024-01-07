@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Resume() {
     return (
         <div className="w-full p-5">
-            <h1 className="w-fit mx-auto text-4xl relative -z-10">
+            <h1 className="w-fit mx-auto text-4xl relative">
                 My Resume
                 <Link href="https://www.louay.tn/resume.pdf" className="absolute -right-8 -top-2"><PDFIcon/></Link>
             </h1>

@@ -33,7 +33,7 @@ export default function Certificats() {
     ];
 
     return (
-        <div className="pt-5 -z-10">
+        <div className="pt-5 w-full">
             <h1 className="w-fit mx-auto text-2xl sm:text-4xl">My Certifications</h1>
             <div className="max-w-[1600px] w-full mx-auto px-5 flex flex-wrap justify-center h-fit py-5 gap-5">
                 {certs.map(({ title, issuer, online, date, link }, idx) => (

@@ -3,6 +3,26 @@ import Link from "next/link";
 export default function Projects() {
     const projects = [
         {
+            title: "BudgetTrack",
+            description: "An event budget management and tracking app\nuser/pass: admin",
+            repository: "https://github.com/Stem-LG/budget-front",
+            link: "https://budget.louay.tn",
+            tech: [
+                {
+                    name: "Angular",
+                    link: "https://angular.dev/",
+                },
+                {
+                    name: "TailwindCSS",
+                    link: "https://tailwindcss.com/",
+                },
+                {
+                    name: "DjangoRF",
+                    link: "https://www.django-rest-framework.org/",
+                },
+            ],
+        },
+        {
             title: "InternUp",
             description: "A mobile app simplifying internship discovery for students",
             repository: "https://github.com/Stem-LG/internup",
@@ -216,7 +236,7 @@ export default function Projects() {
                             </div>
                         </div>
                         <div className="flex flex-col">
-                            <p className="py-2.5 font-extralight">{description}</p>
+                            <p className="py-2.5 font-extralight whitespace-pre-wrap">{description}</p>
                             <div className="flex flex-wrap gap-2">
                                 {tech.map(({ name, link }, idx) => (
                                     <Link
